@@ -1,0 +1,31 @@
+{
+  "employee" : [
+    {
+      "name" : "Tushar",
+      "salary" : "35000",
+      "gender" : "male",
+      "startDate" : "2019-05-07",
+      "note" : "Test notes",
+      "profilePic" : "My profile pic",
+      "departments" : ["Finance","Sales"]
+    },
+    {
+      "name" : "Shubham",
+      "salary" : "40000",
+      "gender" : "male",
+      "startDate" : "2019-05-07",
+      "note" : "Test notes",
+      "profilePic" : "My profile pic",
+      "departments" : ["Finance","Sales"]
+    },
+    {
+      "name" : "Rohan",
+      "salary" : "45000",
+      "gender" : "male",
+      "startDate" : "2019-05-07",
+      "note" : "Test notes",
+      "profilePic" : "My profile pic",
+      "departments" : ["Finance","Sales"]
+    }
+  ]
+}

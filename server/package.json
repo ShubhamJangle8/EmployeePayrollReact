@@ -1,0 +1,13 @@
+{
+  "name": "employeepayroll",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specification\" && exit 1",
+    "start": "json-server --watch ./db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
