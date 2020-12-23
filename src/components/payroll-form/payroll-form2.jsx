@@ -264,8 +264,7 @@ const PayrollForm = (props) => {
                     <div className="error">{formValue.error.department}</div>
                     <div className="row">
                         <label className="label text" htmlFor="notes">Notes</label>
-                        <textarea onChange={changeValue} id="notes" value={formValue.notes} className="input" name="notes" placeholder="" 
-                        style={{height: '100%'}}></textarea>
+                        <textarea onChange={changeValue} id="notes" value={formValue.notes} className="input" name="notes" placeholder="add notes..." style={{height: '100%'}}></textarea>
                     </div>  
                     <div className="buttonParent">
                         <a routerlink="" className="resetButton button cancelButton">Cancel</a>
