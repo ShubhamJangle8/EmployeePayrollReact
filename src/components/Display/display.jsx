@@ -10,8 +10,8 @@ import { withRouter } from "react-router-dom";
 import EmployeeService from '../../services/employee-service'
 const Display = (props) => {
     const employeeService = new EmployeeService();
-    console.log(props)
     const update = (employeeId) => {
+      console.log(employeeId)
       props.history.push(`payroll-form/${employeeId}`);
     };
   
@@ -19,7 +19,7 @@ const Display = (props) => {
       employeeService
         .deleteEmployee(employeeId)
         .then((data) => {
-          console.log("data after delete", data);
+          alert("data after delete", data);
           props.getAllEmployee();
         })
         .catch((err) => {

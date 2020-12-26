@@ -28,8 +28,7 @@ export default class Home extends React.Component {
     this.employeeService
       .getAllEmployee()
       .then((data) => {
-        // console.log("data after get ", data.data);
-        this.setState({
+        this.setState({ 
           employeeArray: data.data.data,
           AllEmployeeArray: data.data.data,
         });
@@ -40,7 +39,6 @@ export default class Home extends React.Component {
   };
   search = async (event) => {
     let search = event.target.value;
-
     await this.setState({ employeeArray: this.state.AllEmployeeArray });
     let empArray = this.state.employeeArray;
     if (search.trim().length > 0)
@@ -48,16 +46,15 @@ export default class Home extends React.Component {
         (element) =>
           element.name.toLowerCase().indexOf(search.toLowerCase()) > -1
       );
-
     this.setState({ employeeArray: empArray });
   };
 
   render() {
     return (
       <div>
-        <header className='header row center'>
-          <div className="logo">
-            <img src={logo} alt=""/>
+        <header className="header-content header">
+          <div className="logo-content">
+            <img src={logo} alt="Logo" />
             <div>
               <span className="emp-text">EMPLOYEE</span><br />
               <span className="emp-text emp-payroll">PAYROLL</span>

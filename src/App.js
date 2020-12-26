@@ -1,4 +1,4 @@
-import PayrollForm from './components/payroll-form/payroll-form4';
+import PayrollForm from './components/payroll-form/payroll-form';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import React, { Component } from 'react'
 import Home from './components/Home/home'

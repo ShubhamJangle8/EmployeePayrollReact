@@ -1,13 +1,13 @@
-body{
+body {
   margin: 0;
   height: 100%;
 }
 
-.header{
+.header {
   padding: 15px 0;
-  background-color: #ffffff
+  background-color: #ffffff;
 }
-.header-content{
+.header-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -15,27 +15,27 @@ body{
   border: 0px solid green;
 }
 
-.logo-content{
+.logo-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   border: 0px solid green;
   width: 80%;
 }
-.emp-text{
+.emp-text {
   font: normal normal bold 20px/25px MontSerrat;
-  font-family: "MontSerrat",sans-serif;
+  font-family: "MontSerrat", sans-serif;
   letter-spacing: 0px;
   color: #82a70c;
   text-transform: capitalize;
 }
-.emp-payroll{
+.emp-payroll {
   color: #42515f;
 }
-*{
+* {
   box-sizing: border-box;
 }
-.form-content{
+.form-content {
   min-height: calc(100% - 80px);
   background-color: #f7f7f7;
   display: flex;
@@ -43,16 +43,16 @@ body{
   align-items: center;
   border: 0px solid green;
 }
-.form{
+.form {
   width: 65%;
   padding: 44px 60px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border: 1px solid #f5f5f5;
   border-radius: 8px;
-  opacity: 1; 
+  opacity: 1;
 }
-.form-head{
+.form-head {
   font: normal normal bold 24px/37px Roboto;
   letter-spacing: 0px;
   color: #42515f;
@@ -60,48 +60,49 @@ body{
   opacity: 1;
   padding-bottom: 20px;
 }
-img{
+img {
   height: 50px;
   margin-right: 5px;
 }
-.row-content{
+.row-content {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
   align-items: center;
   border: 0px solid green;
 }
-.label{
+.label {
   min-width: 140px;
 }
-label{
+label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-.text{
+.text {
   font-size: 16px;
   color: #42515f;
   opacity: 1;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
 }
-.input{
+.input {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
 }
-.name-error{
+.name-error {
   font-size: 15px;
   font-style: italic;
   color: red;
 }
-.date-error{
+.date-error {
   font-size: 15px;
   font-style: italic;
   color: red;
 }
-.date{
+.date {
   margin-right: 10px;
 }
 .error {
@@ -111,7 +112,7 @@ label{
   color: red;
   text-align: end;
 }
-.profile-radio-content{
+.profile-radio-content {
   display: flex;
   flex-direction: row;
 }
@@ -120,12 +121,12 @@ label{
   flex-direction: row;
   align-items: center;
 }
-.profile{
+.profile {
   width: 40px;
   border-radius: 50%;
   margin-left: 5px;
 }
-select{
+select {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -135,16 +136,16 @@ select{
   color: #42515f;
   background-color: transparent;
 }
-.buttonParent{
+.buttonParent {
   display: flex;
   margin-bottom: 10px;
   justify-content: space-between;
   margin-top: 20px;
-  
 }
-.button{
+.button {
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
   letter-spacing: 0px;
   color: #42515f;
   opacity: 1;
@@ -156,54 +157,72 @@ select{
   border: 1px solid #707070;
   cursor: pointer;
 }
-.resetButton:hover{
-  background-color:#707070;
+.resetButton:hover {
+  background-color: #707070;
   color: white;
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
-.submitButton{
+.submitButton {
   border: none;
   background-color: #f5f5f5;
   margin-right: 30px;
 }
-.submitButton:hover{
-  background-color:#82a70c;
+.submitButton:hover {
+  background-color: #82a70c;
   color: white;
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
-.cancelButton{
+.cancelButton {
   text-decoration: none;
   text-align: center;
 }
-.cancelButton:hover{
-  background-color:#707070;
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+.cancelButton:hover {
+  background-color: #707070;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
-@media only screen and (max-width: 960px){
-  .cancelButton{
+@media only screen and (max-width: 960px) {
+  .cancelButton {
     width: 5px;
     margin-left: 0px;
   }
-  .form{
+  .form {
     width: 85%;
     padding: 44px 20px;
   }
 }
-@media only screen and (max-width: 600px){
-  .form{
+@media only screen and (max-width: 560px) {
+  .form {
+    width: 95% !important;
+  }
+  .profile-radio-content {
+    display: block;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+  }
+  .department-label,
+  .gender-label {
+    span {
+      display: block;
+    }
+  }
+  select {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form {
     margin-top: 10px;
   }
-  .row{
+  .row {
     flex-direction: column;
   }
-  .uploadButton{
+  .uploadButton {
     justify-content: flex-start;
   }
-  .profile-radio-button
-  {
+  .profile-radio-button {
     flex-flow: wrap;
   }
-  .submit-reset{
+  .submit-reset {
     width: 100%;
     display: flex;
     flex-grow: 1;
@@ -211,67 +230,68 @@ select{
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  .submitButton{
+  .submitButton {
     margin: 0;
   }
-  .buttonParent{
+  .buttonParent {
     flex-direction: column-reverse;
     align-items: flex-start;
   }
-  @media only screen and (max-width: 300px){
-    .row{
-      flex-direction: column;
-    }
-    .profile-radio-content{
-      flex-flow: column;
-    }
-    .gender{
-      flex-flow: row;
-    }
-    .department-label{
-      flex-flow: column;
-    }
-    .label{
-      .text{
-        width: 200px;
-      }
-      
-    }
-    .slider{
-      width: 40px;
-    }
-    .text{
-      width: 100px;
-    }
-    .buttonParent{
-      .cancelButton{
-        width: 100px;
-      }
-    } 
-    
+}
+@media only screen and (max-width: 330px) {
+  .row {
+    flex-direction: column;
   }
-  @media only screen and (max-width: 400px){
-    .row{
-      flex-direction: column;
+  .profile-radio-content {
+    display: block;
+    flex-flow: column;
+  }
+  .gender {
+    flex-flow: row;
+  }
+  .department-label {
+    flex-flow: column;
+  }
+  .label {
+    .text {
+      width: 200px;
     }
-    .profile-radio-content{
-      flex-flow: column;
+  }
+  .slider {
+    width: 40px;
+  }
+  .text {
+    width: 100px;
+  }
+  .buttonParent {
+    .resetButton{
+      width: 50px;
     }
-    .gender{
-      flex-flow: row;
-    }
-    .department-label{
-      flex-flow: column;
-    }
-    .label{
-      width: 2px;
-    }
-    .slider{
-      width: 40px;
-    }
-    .text{
+    .cancelButton {
       width: 100px;
     }
   }
-
+}
+@media only screen and (max-width: 400px) {
+  .row {
+    flex-direction: column;
+  }
+  .profile-radio-content {
+    flex-flow: column;
+  }
+  .gender {
+    flex-flow: row;
+  }
+  .department-label {
+    flex-flow: column;
+  }
+  .label {
+    width: 2px;
+  }
+  .slider {
+    width: 40px;
+  }
+  .text {
+    width: 100px;
+  }
 }

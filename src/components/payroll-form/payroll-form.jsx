@@ -42,13 +42,7 @@ const PayrollForm = (props) => {
             notes: ''
         }
     }
-    let initialError = {
-        error: {
-            nameError: ''
-        }
-    }
     const [formValue, setForm] = useState(initialValue);
-    const [error, setError] = useState(initialError);
     const params = useParams();
     const employeeService = new EmployeeService();
     useEffect(() => {
@@ -71,14 +65,12 @@ const PayrollForm = (props) => {
     };
     const regEx = /[A-Z]{1}[A-Za-z]{2,}/;
     const changeValue = (event) => {
-        console.log(event.target.name + "==" + event.target.value);
         if (event.target.name == "name") {
-            console.log("namsdfe");
             let errMsg = "";
             if (!regEx.test(formValue.name)) {
                 errMsg = 'name is incorrect'
             }
-            setForm({ ...formValue, [event.target.name]: event.target.value, error: {...formValue.error, name: errMsg}});
+            setForm({ ...formValue, [event.target.name]: event.target.value, error: { ...formValue.error, name: errMsg } });
         }
         else {
             setForm({ ...formValue, [event.target.name]: event.target.value });
@@ -86,8 +78,7 @@ const PayrollForm = (props) => {
     }
 
     const setData = (obj) => {
-        let array = obj.startDate.split(" ");
-        console.log(obj)
+        let array = obj.startDate.split("-");
         setForm({
             ...formValue,
             obj,
@@ -97,9 +88,9 @@ const PayrollForm = (props) => {
             departmentValue: obj.department,
             notes: obj.notes,
             isUpdate: true,
-            day: array[0],
+            day: array[2],
             month: array[1],
-            year: array[2],
+            year: array[0],
             profileUrl: obj.profile
         });
 
@@ -132,9 +123,6 @@ const PayrollForm = (props) => {
             error.name = 'name is required field'
             isError = true;
         }
-
-
-
         if (formValue.gender.length < 1) {
             error.gender = 'Gender is required field'
             isError = true;
@@ -157,11 +145,6 @@ const PayrollForm = (props) => {
             isError = true;
         }
         console.log(formValue.startDate)
-        // if (formValue.startDate.length < 1) {
-        //     console.log(formValue.startDate)
-        //     error.startDate = 'Date is required field'
-        //     isError = true;
-        // }
         await setForm({ ...formValue, error: error })
         return isError;
     }
@@ -174,12 +157,10 @@ const PayrollForm = (props) => {
         }
         let object = {
             name: formValue.name,
-            // department: [],
             department: formValue.departmentValue,
             gender: formValue.gender,
             salary: formValue.salary,
-            // startDate: `${formValue.day} ${formValue.month} ${formValue.year}`,
-            startDate: `${formValue.year}-${formValue.month}-${formValue.day}`,
+            startDate: `${formValue.year.toString()}-${formValue.month}-${formValue.day}`,
             notes: formValue.notes,
             id: formValue.id,
             profile: formValue.profileUrl,
@@ -195,7 +176,7 @@ const PayrollForm = (props) => {
                     props.history.push("");
                 })
                 .catch((err) => {
-                   alert("Error after update");
+                    alert("Error after update");
                 });
         } else {
             employeeService
@@ -212,8 +193,6 @@ const PayrollForm = (props) => {
 
     const reset = () => {
         setForm({ ...initialValue, id: formValue.id, isUpdate: formValue.isUpdate });
-
-        console.log(formValue);
     }
     return (
         <div>
@@ -232,7 +211,8 @@ const PayrollForm = (props) => {
                     <div className="row-content">
                         <label className="label text" htmlFor="name">Name</label>
                         <input className="input" type="text" id="name" name="name" value={formValue.name} onChange={changeValue} placeholder="Enter name here" />
-                    </div><div className="error">{formValue.error.name}</div>
+                    </div>
+                    <div className="error">{formValue.error.name}</div>
                     <div className="row-content">
                         <label className="label text" htmlFor="profile">Profile Image</label>
                         <div className="profile-radio-content">
@@ -261,15 +241,15 @@ const PayrollForm = (props) => {
                     <div className="error">{formValue.error.profileUrl}</div>
                     <div className="row-content">
                         <label className="label text" htmlFor="gender">Gender</label>
-                        <div>
-                            <div className='gender'>
-                                <input type="radio" id="male" onChange={changeValue} name="gender" value="male" checked={formValue.gender == "male" ? true : false} />
+                        <div className="gender-label">
+                            <span>
+                                <input type="radio" id="male" checked={formValue.gender === 'male'} onChange={changeValue} name="gender" value="male" checked={formValue.gender == "male" ? true : false} />
                                 <label className="text" htmlFor="male">Male</label>
-                            </div>
-                            <div className='gender'>
-                                <input type="radio" id="female" onChange={changeValue} name="gender" value="female" checked={formValue.gender == "female" ? true : false}/>
+                            </span>
+                            <span>
+                                <input type="radio" id="female" onChange={changeValue} checked={formValue.gender === 'female'} name="gender" value="female" checked={formValue.gender == "female" ? true : false} />
                                 <label className="text" htmlFor="female">Female</label>
-                            </div>
+                            </span>
                         </div>
                     </div>
                     <div className="error">{formValue.error.gender}</div>
@@ -376,7 +356,5 @@ const PayrollForm = (props) => {
         </div>
     );
 }
-
-
 
 export default withRouter(PayrollForm);
